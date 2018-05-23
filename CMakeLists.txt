@@ -21,3 +21,5 @@ add_executable(4.5.1_why_bother_with_functions 4.5.1_why_bother_with_functions.c
 add_executable(4.6.1_traversing_a_vector 4.6.1_traversing_a_vector.cpp)
 add_executable(4.6.3_numeric_vector_example 4.6.3_numeric_vector_example.cpp)
 add_executable(4.6.3_text_vector_example 4.6.3_text_vector_example.cpp)
+add_executable(4.6.3_try_this_bleep 4.6.3_try_this_bleep.cpp)
+add_executable(4_ex01 4_ex01.cpp)
