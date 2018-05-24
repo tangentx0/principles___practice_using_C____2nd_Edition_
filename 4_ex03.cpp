@@ -17,6 +17,6 @@ int main() {
     cout << "The smallest distance between cities is: " << distances[0] << " miles" << endl;
     cout << "The largest distance between cities is: " << distances[distances.size()-1] << " miles" << endl;
     cout << "The total distances between all cities entered is " << total_distance << " miles" << endl;
-    cout << "The mean distance between all cities is: " << total_distance/distances.size() << " miles: << endl";
+    cout << "The mean distance between all cities is: " << total_distance/distances.size() << " miles" << endl;
 
 }
