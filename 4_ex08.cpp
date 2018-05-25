@@ -11,8 +11,8 @@ int main () {
 
     int rice_wanted;
     int current_square = 1;
-//    int rice_in_current_square = 1;
-    int current_rice_total = 0;
+    int rice_in_current_square = 1;
+    int current_rice_total = 1;
 
     cout << "Enter the number of grains or rice you would like to be rewarded with and I will calculate ";
     cout << "how many squares of a chessboard it would take according to the emperor's reward scheme: " << endl;
@@ -21,7 +21,7 @@ int main () {
 
     for (int i = 0; ++i;) {
         if (current_rice_total < rice_wanted) {
-            current_rice_total += square(current_square);
+            current_rice_total += current_rice_total*2;
             ++current_square;
         }
 
