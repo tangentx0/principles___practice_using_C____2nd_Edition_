@@ -8,8 +8,8 @@ int main()
         temps.push_back(temp);
 
     double sum = 0;
-    double high_temp = 0;
-    double low_temp = 0;
+    double high_temp = -1000;
+    double low_temp = 1000;
 
     for (int x : temps)
     {

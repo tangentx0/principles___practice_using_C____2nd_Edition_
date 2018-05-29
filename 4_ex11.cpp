@@ -1,5 +1,6 @@
 #include "std_lib_facilities.h"
 
+
 vector<int> primes_norm;    //create a vector which will store the primes found
 
 bool is_prime(int n) {      //create a function which results in true if number is a prime
