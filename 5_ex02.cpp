@@ -19,12 +19,36 @@ double ktoc (double k)
 
 //main program
 int main ()
-{
-    double c = 0;
-    cout << "Please enter the temperature in celsius that you would like converted to Kelvin:" << endl;
-    cin >> c;               //take input reading
-    double k = ctok(c);     //convert temperature
+try {
+    double input_temp = 0;           //initialise input temperature
+    char input_unit = ' ';           //initialise input unit
+    double output_temp = 0;          //initialise output temperature
+    char output_unit = ' ';          //initialise output unit
 
-    cout << k << endl;      //print result
+    cout << "Please enter the temperature and unit (c or K) that you would like converted:" << endl;
+    cin >> input_temp >> input_unit;               //take input reading
 
+    if (input_unit == 'c' || input_unit == 'C') {
+        output_temp = ctok(input_temp);
+        output_unit = 'K';
+    }
+
+    else if (input_unit == 'k' || input_unit == 'K') {
+        output_temp = ktoc(input_temp);
+        output_unit = 'C';
+    }
+    else {
+        cerr << "Illegal units used";
+    }
+
+    cout << input_temp << input_unit << " is equal to " << output_temp << output_unit << endl;
+    return 0;
+}
+catch (exception& e) {
+    cerr << "Error: " << e.what() << endl;
+    return 1;
+}
+catch (...) {
+    cerr << "Unknown exception!\n";
+    return 2;
 }
