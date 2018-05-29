@@ -9,23 +9,22 @@ try {
     int series_number = 0;
     char user_response = ' ';
 
-    cout << "Would you like to calculate the largest fibonnaci number that will fit into an 'int' automatically? (y/n)" << endl;
+    cout << "would you like to calculate the largest fibonnaci number that will fit into an 'int' automatically? (y/n)" << endl;
     cin >> user_response;
 
     switch(user_response) {
         case 'n':
-        case 'N':
+        case 'N': {
 
-            cout << "How many numbers of the fibonacci series would you like to calculate?" << endl << endl;
-
+            cout << "how many numbers of the fibonacci series would you like to calculate?" << endl << endl;
             cin >> series_number;
 
             //very basic error handling of user choosing negative numbers
             while (series_number < 0) {
                 cerr
-                        << "You must choose a sequence number greater than or equal to zero to be able to calculate these numbers"
+                        << "you must choose a sequence number greater than or equal to zero to be able to calculate these numbers"
                         << endl;
-                cout << "Try again: " << endl;
+                cout << "try again: " << endl;
                 cin >> series_number;
             }
 
@@ -40,19 +39,33 @@ try {
                 cout << series[i] << endl;
             }
             break;
+        }
 
-        case 'y': case 'Y':
-            while (series[series.size()-1] + series[series.size()-2] > series[series.size()-1])
-                series.push_back(series[series.size()-1] + series[series.size()-2]);
-            cout << "The biggest Fibonacci number to fit in an int is " << series[series.size()-1] << endl;
-            break;
+        case 'y':
+        case 'Y': {
+            int n = 1;
+            int m = 2;
+            int p = 2;      //we include 0 and first 1 in here as m = 2
 
-        default:
-            cout << "Invalid input" << endl;
+            while (n < m) {
+                //cout << n << '\n';        //optionally print each fibonacci number
+                int x = n + m;
+                n = m;    // drop the lowest number
+                m = x;    // add a new highest number
+                ++p;      // increment sequence number
             }
+
+            cout << "the largest Fibonacci number that fits in an int is " << n <<  " which is sequence number " << p << '\n';
+            break;
+        }
+
+        default: {
+            cout << "invalid input" << endl;
+        }
+    }
 }
 catch (exception& e) {
-    cerr << "Error: " << e.what() << endl;
+    cerr << "error: " << e.what() << endl;
     //keep_window_open();
     return 1;
 }
